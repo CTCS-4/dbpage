@@ -1,0 +1,29 @@
+/*CSS3 For the site*/
+.login{
+    background-color: #66ccff;
+    box-shadow: 0 0 1rem 0.5rem #66ccff5d;
+    padding: 20px 20px 20px 20px;
+    margin-top: 40%;
+}
+
+.login-caption{
+    padding: 5px 0 5px 0;
+}
+
+.login-buttons{
+    padding-top: 15px;
+}
+
+.homenav{
+    width: 100%;
+    background-color: #6bceff;
+    color: white;
+    box-shadow: 0 .5rem 1rem #66ccff6e;
+}
+
+.leftsidebar{
+    border-right: 2px solid;
+    border-color: rgba(128, 128, 128, 0.493);
+    padding: 20px 20px 20px 20px;
+    
+}
