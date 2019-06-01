@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+    router,
+    render: h => h(App)
 }).$mount('#app')
 
 const express = require('express')
 const http = require('http')
 const bodyParser = require('body-parser')
-const crypto = require('crypto') 
+const crypto = require('crypto')
 const app = express()
 const fs = require('fs')
 
