@@ -5,7 +5,7 @@ const crypto = require('crypto')
 const app = express()
 const fs = require('fs')
 
-app.use(express.static('/home/dbproj/dbpage'))
+app.use(express.static('/home/dbproj/dbpage/dbvue/static'))
 
 //create json parser
 var jsonParser = bodyParser.json()
@@ -61,4 +61,4 @@ app.post('/login',urlencodedParser,function(req,res){
 	
 });
 
-http.createServer(app).listen(2233,()=>console.log('Example App running on port 2233'))
+//http.createServer(app).listen(2233,()=>console.log('Example App running on port 2233'))
