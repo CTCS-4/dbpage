@@ -10,12 +10,23 @@
     <!--bootstrap CDN-->
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!--JS support-->
+    
     <!--vue CDN-->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+     <!--vue-router CDN-->
+     <script src="https://cdn.bootcss.com/vue-router/3.0.6/vue-router.js"></script>
     <!--bootstrap CDN-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="javascript">
+            var app1 = new Vue({
+                el:"#app1",
+                data:{
+                    msg:'Hello Vue!'
+                }
+            })
+        </script>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -31,7 +42,7 @@
             <nav class="navbar-expand-md">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action active">图书信息查询</a>
-                    <a class="list-group-item list-group-item-action ">图书采购操作</a>
+                    <router-link to="/add" class="list-group-item list-group-item-action ">图书采购操作</router-link>
                     <a class="list-group-item list-group-item-action ">图书淘汰操作</a>
                     <a class="list-group-item list-group-item-action ">图书租借操作</a>
 
@@ -39,7 +50,7 @@
         </div>
         <!--主要显示部分-->
         <div class="col-md-8 main-display">
-            <div class="form-group">
+            <div class="form-group"><form action="./querybook" method="POST">
               <label for="bookName">书名</label>
               <input type="text" id="bookName" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">请输入要查找的书名</small>
@@ -49,30 +60,39 @@
               <input type="text" id="bookAuthor" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted">请输入要查找的书的作者</small>
             </div>
-            <div class="result">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>书名</th>
-                            <th>作者</th>
-                            <th>书号</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            <div class="form-group">
+                <label for="bookIndex">索书号</label>
+                <input type="text" id="bookIndex" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">请输入要查找的书的索书号</small>
+              </div></form>
+              <div class="col-md-8 main-display">
+                <form action="./addbook" method="POST">
+                    <div class="form-group">
+                      <label for="bookName">书名</label>
+                      <input type="text" id="bookName" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">请输入要录入的书名</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="bookAuthor">作者</label>
+                      <input type="text" id="bookAuthor" class="form-control" placeholder="" aria-describedby="helpId">
+                      <small id="helpId" class="text-muted">请输入要录入的作者</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookIndex">索书号</label>
+                        <input type="text" id="bookIndex" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted">请输入要录入的索书号</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="bookPublisher">出版商</label>
+                        <input type="text" id="bookPublisher" class="form-control" placeholder="" aria-describedby="helpId">
+                        <small id="helpId" class="text-muted">请输入要录入的出版商</small>
+                      </div>
+                    <button type="submit">Press</button>
+                </div></form>
+            <div class="result" id="app1">{{msg}}</div>
+
+        
     </div>
 </body>
+
 </html>
